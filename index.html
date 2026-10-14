@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Swan: منح وبرامج ومسابقات تعليمية بروابطها الرسمية ومواعيدها.">
+<meta name="theme-color" content="#1B3A6B">
+<title>Swan — منصة الفرص التعليمية</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🦢%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F6F7FB;--card:#fff;--ink:#16223B;--soft:#546079;--pri:#1B3A6B;--pri2:#2A57A6;--tint:#E8EEF9;--acc:#A8560F;--acc-t:#FBEBD9;--line:#D9DFEC;--ok:#1E6B45;--ok-t:#E6F3EC;--r:14px;--sh:0 10px 30px rgba(27,58,107,.10)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.8 Tajawal,Inter,system-ui,sans-serif}
+[dir=ltr] body{font-family:Inter,Tajawal,system-ui,sans-serif;line-height:1.65}
+h1,h2,h3{margin:0;font-weight:800;line-height:1.35;color:var(--pri)}
+button,input,select{font:inherit;color:inherit}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--pri2);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 5%}
+header .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;font:800 24px Inter,sans-serif;color:var(--pri);text-decoration:none}
+nav{display:flex;align-items:center;gap:22px}
+nav .links{display:flex;gap:22px}
+nav a{text-decoration:none;color:var(--soft);font-size:15px;font-weight:500}
+nav a:hover{color:var(--pri)}
+.lang{display:flex;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:3px}
+.lang button{border:0;background:none;min-height:36px;min-width:48px;padding:0 14px;border-radius:999px;font-size:14px;font-weight:700;cursor:pointer;color:var(--soft)}
+.lang button[aria-pressed=true]{background:var(--pri);color:#fff}
+.hero{text-align:center;padding:44px 0 28px}
+.hero h1{font-size:clamp(34px,6vw,58px);max-width:780px;margin:0 auto}
+.hero p{max-width:580px;margin:16px auto 0;color:var(--soft);font-size:17px}
+.search{max-width:720px;margin:28px auto 0;display:flex;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px;box-shadow:var(--sh)}
+.search:focus-within{border-color:var(--pri2)}
+.search input{flex:1;min-width:0;border:0;outline:0;background:none;padding:0 18px;font-size:16px}
+.search input::placeholder{color:#6B7690}
+.btn{background:var(--pri);color:#fff;border:0;border-radius:999px;padding:0 26px;min-height:46px;font-weight:700;cursor:pointer}
+.btn:hover{background:var(--pri2)}
+.bar{display:grid;gap:10px;margin:30px 0 14px}#adv{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.fbtn{display:none}
+.pills{grid-column:1/-1;display:flex;gap:6px;overflow-x:auto;padding:4px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.pills button{flex:1 0 auto;min-height:42px;border:0;background:none;border-radius:10px;padding:0 16px;font-weight:700;color:var(--soft);cursor:pointer;white-space:nowrap}
+.pills button[aria-pressed=true]{background:var(--pri);color:#fff}
+select{min-height:46px;width:100%;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:0 12px;font-size:15px}
+.meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;color:var(--soft);font-size:15px;gap:10px}
+.link{background:none;border:0;color:var(--pri2);font-weight:700;cursor:pointer;text-decoration:underline;min-height:40px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px;display:flex;flex-direction:column;gap:10px}
+.card:hover{border-color:var(--pri2)}
+.top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.badge{font-size:13px;font-weight:700;padding:3px 12px;border-radius:999px;background:var(--tint);color:var(--pri)}
+.badge.competition{background:var(--acc-t);color:var(--acc)}
+.badge.program{background:var(--ok-t);color:var(--ok)}
+.src{font-size:13px;color:var(--soft);font-weight:500}
+.card h3{font-size:21px}
+.desc{color:var(--soft);font-size:15px;margin:0;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;flex:1}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:13px;background:var(--bg);border:1px solid var(--line);color:var(--soft);padding:2px 10px;border-radius:8px}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:8px;border-top:1px solid var(--line);padding-top:12px;margin-top:2px;font-size:14px}
+.due{background:var(--acc-t);color:var(--acc);font-weight:700;font-size:13px;padding:2px 10px;border-radius:8px}
+.cta{border:1.5px solid var(--pri);background:none;color:var(--pri);border-radius:10px;min-height:42px;padding:0 16px;font-weight:700;cursor:pointer}
+.cta:hover{background:var(--pri);color:#fff}
+.ver{font-size:13px;color:var(--ok)}
+.ver.no{color:var(--soft)}
+.empty{text-align:center;padding:50px 10px;color:var(--soft);display:none}
+.ov{position:fixed;inset:0;background:rgba(15,25,45,.55);display:none;align-items:center;justify-content:center;padding:16px;z-index:50}
+.ov.open{display:flex}
+.modal{background:var(--card);border-radius:18px;max-width:600px;width:100%;max-height:90vh;overflow:auto;padding:26px;position:relative}
+.x{position:absolute;top:12px;inset-inline-end:12px;width:44px;height:44px;border:0;background:var(--bg);border-radius:50%;font-size:24px;cursor:pointer}
+.modal h3{font-size:25px;margin:12px 44px 10px 0}
+[dir=ltr] .modal h3{margin:12px 0 10px 44px}
+.modal h4{margin:18px 0 4px;font-size:16px;color:var(--pri)}
+.modal p{margin:0;color:var(--soft)}
+.modal .note{margin-top:16px;padding:10px 14px;border-radius:10px;background:var(--acc-t);color:#6B3A08;font-size:14px}
+.mfoot{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:20px;padding-top:14px;border-top:1px solid var(--line)}
+.apply{background:var(--acc);color:#fff;text-decoration:none;border-radius:999px;padding:10px 22px;font-weight:700}
+.apply:hover{background:#8A460B}
+footer{background:var(--pri);color:#EEF2FB;margin-top:60px;padding:40px 0 24px}
+footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
+footer small{display:block;margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,255,.2);color:#C9D3EA;font-size:14px}
+footer a{color:#fff}
+@media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}#adv{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:680px){.grid{grid-template-columns:1fr}nav .links{display:none}.search{border-radius:18px;flex-wrap:wrap}.search input{min-height:44px;flex-basis:100%}.btn{flex:1}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+html{-webkit-tap-highlight-color:transparent;scroll-padding-top:12px}
+.acct{min-height:42px;border:1.5px solid var(--pri);background:none;color:var(--pri);border-radius:999px;padding:0 16px;font-weight:700;cursor:pointer;white-space:nowrap}
+.acct.on{background:var(--pri);color:#fff}
+.banner{display:none;background:var(--acc-t);color:#6B3A08;padding:10px 5%;font-size:15px;text-align:center}
+.banner button{background:none;border:0;font-weight:800;text-decoration:underline;cursor:pointer;color:inherit;min-height:36px}
+.fld{display:block;margin:14px 0 4px;font-weight:700;font-size:15px}
+.fi{width:100%;min-height:50px;border:1px solid var(--line);border-radius:12px;padding:0 14px;font-size:16px;background:#fff}
+.fi:focus{border-color:var(--pri2)}
+.msg{margin-top:12px;min-height:24px;font-size:15px}.msg.err{color:#A12A1B}.msg.ok{color:var(--ok)}
+.full{width:100%;margin-top:16px;min-height:50px}
+.save{background:none;border:0;cursor:pointer;font-size:24px;min-width:44px;min-height:44px;color:var(--soft);margin:-8px}
+.save[aria-pressed=true]{color:var(--acc)}
+.bb{display:none;position:fixed;inset-inline:0;bottom:0;background:#fff;border-top:1px solid var(--line);z-index:40;padding-bottom:env(safe-area-inset-bottom)}
+.bb button{flex:1;min-height:58px;border:0;background:none;font-size:13px;font-weight:700;color:var(--soft);cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+.bb button[aria-pressed=true]{color:var(--pri)}
+.bb i{font-style:normal;font-size:20px;line-height:1}
+@media(max-width:680px){
+ body{padding-bottom:calc(70px + env(safe-area-inset-bottom))}
+ .bb{display:flex}
+ .fbtn{display:block;min-height:46px;border:1px solid var(--line);background:#fff;border-radius:12px;font-weight:700;cursor:pointer}
+ #adv{display:none;grid-template-columns:1fr 1fr}#adv.open{display:grid}
+ header .wrap{padding-top:10px;padding-bottom:10px}
+ .hero{padding:24px 0 12px}.hero p{font-size:16px}
+ .ov{align-items:flex-end;padding:0}
+ .modal{border-radius:20px 20px 0 0;max-height:92vh;padding:22px 18px calc(18px + env(safe-area-inset-bottom))}
+ .mfoot{position:sticky;bottom:-20px;background:#fff;padding-bottom:6px}
+ .apply{flex:1;text-align:center;min-height:48px;display:flex;align-items:center;justify-content:center}
+ .card{padding:18px}.card h3{font-size:20px}
+ #acct{padding:0 12px;font-size:14px}
+}
+</style>
+</head>
+<body>
+<div class="banner" id="bn" role="status"></div>
+<header><div class="wrap">
+  <a class="logo" href="#top" aria-label="Swan"><svg width="32" height="32" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M10 34c4-2 8-2 11-6 4-5 3-11-1-14-3-2-7-1-8 2-1 2 0 4 2 4.5" stroke="#1B3A6B" stroke-width="2.4" stroke-linecap="round"/><circle cx="20" cy="13" r="1.7" fill="#1B3A6B"/><path d="M6 36c8 3 22 3 34-2" stroke="#A8560F" stroke-width="2.2" stroke-linecap="round"/></svg>Swan</a>
+  <nav aria-label="main"><div class="links"><a href="#opps" data-type="all" data-t="nHome"></a><a href="#opps" data-type="scholarship" data-t="nSch"></a><a href="#opps" data-type="program" data-t="nPro"></a><a href="#opps" data-type="competition" data-t="nCom"></a></div>
+  <button class="acct" id="acct" type="button"></button>
+  <div class="lang" role="group" aria-label="Language"><button id="bAr" type="button" lang="ar">عربي</button><button id="bEn" type="button" lang="en">EN</button></div></nav>
+</div></header>
+<main id="top">
+<section class="hero wrap">
+  <h1 data-t="h1"></h1>
+  <p data-t="sub"></p>
+  <div class="search" role="search"><input id="q" type="search" enterkeyhint="search" autocomplete="off" aria-label="search"><button class="btn" id="go" type="button" data-t="go"></button></div>
+</section>
+<section class="wrap" id="opps">
+  <h2 data-t="title"></h2>
+  <div class="bar">
+    <div class="pills" id="types" role="group"></div>
+    <button class="fbtn" id="fbtn" type="button" aria-expanded="false" aria-controls="adv" data-t="filt"></button><div id="adv"><select id="fStage"></select><select id="fFund"></select><select id="fField"></select><select id="fDue"></select></div>
+  </div>
+  <div class="meta"><span id="count" aria-live="polite"></span><button class="link" id="reset" type="button" data-t="reset"></button></div>
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty" data-t="empty"></div>
+</section>
+</main>
+<div class="ov" id="ov"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="mT">
+  <button class="x" id="mx" type="button" aria-label="إغلاق / Close">&times;</button>
+  <div class="top"><span class="badge" id="mB"></span><span class="src" id="mS"></span></div>
+  <h3 id="mT"></h3><p id="mD"></p><div id="mDet"></div>
+  <div class="tags" id="mTags" style="margin-top:16px"></div>
+  <div class="note" id="mNote"></div>
+  <div class="mfoot"><span id="mDue"></span><a class="apply" id="mA" target="_blank" rel="noopener noreferrer"></a></div>
+</div></div>
+<div class="ov" id="aov"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="aT">
+  <button class="x" id="ax" type="button" aria-label="Close">&times;</button>
+  <h3 id="aT"></h3><div id="aB"></div>
+</div></div>
+<nav class="bb" aria-label="tabs"><button id="bbH" type="button"><i>⌂</i><span data-t="home"></span></button><button id="bbS" type="button" aria-pressed="false"><i>★</i><span data-t="saved"></span></button><button id="bbA" type="button"><i>☺</i><span data-t="aMe"></span></button></nav>
+<footer><div class="wrap">
+  <div class="row"><div><strong style="font-size:22px">Swan</strong><p data-t="ftag" style="margin:6px 0 0;max-width:320px;color:#C9D3EA"></p></div>
+  <div><strong data-t="contact"></strong><p style="margin:6px 0 0">سوسن مصطفى محمد<br><a href="mailto:Sawsawsananwar2023@gmail.com">Sawsawsananwar2023@gmail.com</a><br><a href="tel:+252616688026" dir="ltr">+252 61 668 8026</a></p></div></div>
+  <small data-t="fnote"></small>
+</div></footer>
+
+<script>
+const TODAY=new Date('2026-10-12');
+/* v = تاريخ آخر تحقق مباشر (2026-10-12) | n = لم يُعاد التحقق منه بعد */
+const D=[
+{t:'program',f:'general',s:'high_school',src:'Yale University',fund:'free',dt:'2026-10-20',op:'now',od:['مفتوح الآن','Open now'],dk:['20 أكتوبر 2026 (قبول مبكر) / 20 يناير 2027','Oct 20, 2026 (Early Action) / Jan 20, 2027'],link:'https://africanscholars.yale.edu/',v:'2026-10-12',
+ti:['Yale Young African Scholars 2027','Yale Young African Scholars 2027'],
+ds:['برنامج أكاديمي وقيادي مجاني لطلاب الثانوية الأفارقة، بنسختين: ورشة عبر الإنترنت وقمة حضورية في رواندا.','A free academic and leadership program for African secondary students: an online workshop and a residential summit in Rwanda.'],
+e:['العمر 14–18 سنة بحلول 15 يوليو 2027. مواطن أو مقيم دائم أو لاجئ في دولة أفريقية، ويدرس حالياً في مدرسة أفريقية. الصف 10 أو 11، وليس السنة الأخيرة. إتقان الإنجليزية.','Age 14–18 on July 15, 2027. Citizen, permanent resident or refugee of an African country, currently at school in Africa. Grade 10 or 11 (not final year). English fluency.'],
+b:['لا رسوم تقديم. الورشة الإلكترونية 15–20 يوليو 2027، والقمة الحضورية في رواندا 7–15 أغسطس 2027 مع منح سفر حسب الحاجة.','No application fee. Online workshop July 15–20, 2027; residential summit in Rwanda Aug 7–15, 2027, with need-based travel grants.'],
+h:['قدّم عبر بوابة YYAS الرسمية. القبول المبكر ينتهي 20 أكتوبر 2026 والنتيجة بحلول 18 ديسمبر. التقديم العادي ينتهي 20 يناير 2027 والنتيجة بحلول 20 مارس.','Apply on the official YYAS portal. Early Action closes Oct 20, 2026 (decision by Dec 18). Regular Decision closes Jan 20, 2027 (decision by Mar 20).']},
+{t:'scholarship',f:'general',s:'undergraduate',src:'Türkiye Bursları (YTB)',fund:'full',dt:'2027-02-20',op:'2027-01-10',od:['10 يناير 2027 (متوقع)','Jan 10, 2027 (expected)'],dk:['حتى 20 فبراير 2027 (متوقع)','Until Feb 20, 2027 (expected)'],link:'https://turkiyeburslari.gov.tr/',v:'2026-10-12',
+ti:['منحة تركيا Türkiye Bursları 2027','Türkiye Bursları Scholarship 2027'],
+ds:['منحة حكومية تركية ممولة بالكامل للدراسة الجامعية في تركيا، تشمل الرسوم والإقامة ومخصصاً شهرياً.','A fully funded Turkish government scholarship for studying at Turkish universities, covering tuition, housing and a monthly stipend.'],
+e:['للبكالوريوس: أقل من 21 سنة عند التقديم، ومعدل لا يقل عن 70% (90% للطب وطب الأسنان والصيدلة والبيطرة). يمكن اختيار حتى 12 جامعة/تخصصاً. قد يُطلب اختبار كمّي قبل المقابلة.','Bachelor: under 21 at application and at least 70% average (90% for medicine, dentistry, pharmacy, veterinary). Up to 12 university/program choices. A quantitative test may precede the interview.'],
+b:['إعفاء كامل من الرسوم، مخصص شهري (نحو 4500 ليرة للبكالوريوس بحسب مصادر ثانوية)، وسنة لغة تركية قبل التخصص. التقديم مجاني.','Full tuition waiver, monthly stipend (about TL 4,500 for bachelor per secondary sources) and a Turkish-language year before the degree. Free to apply.'],
+h:['التقديم عبر بوابة TBBS على موقع المنحة. لا يوجد وسطاء مخوّلون بالتقديم.','Apply online via the TBBS portal. No agents are authorized to apply on your behalf.'],
+x:['الموعد غير معلن رسمياً بعد؛ المصادر تتوقع الفتح 10 يناير والإغلاق 20 فبراير 2027. تأكد من الموقع الرسمي.','Official dates are not yet announced; sources expect Jan 10 – Feb 20, 2027. Confirm on the official site.']},
+{t:'program',f:'general',s:'high_school',src:'Yale Young Global Scholars',fund:'partial',dt:'2027-01-06',dk:['6 يناير 2027 (للمساعدة المالية)','Jan 6, 2027 (for financial aid)'],link:'https://globalscholars.yale.edu/',v:'2026-10-12',
+ti:['Yale Young Global Scholars 2027','Yale Young Global Scholars 2027'],
+ds:['برنامج صيفي أكاديمي من جامعة ييل لطلاب الثانوية من كل الدول، مع مساعدات مالية حسب الحاجة.','A Yale summer academic program for high-school students from all countries, with need-based financial aid.'],
+e:['العمر 16–18 بحلول 18 يوليو 2027، في الصف 10 أو 11 (أو ما يعادله)، وإتقان الإنجليزية. تُقبل الطلبات من جميع الدول.','Age 16–18 by July 18, 2027; current sophomore or junior (or equivalent); English fluency. Applicants from all countries are accepted.'],
+b:['مساعدة مالية قائمة على الحاجة لطلاب كل الدول. للنظر في أي منحة يجب إكمال الطلب وقسم المساعدة المالية قبل 6 يناير 2027.','Need-based financial aid for students from all countries. To be considered for a scholarship, complete the full application including the aid section by Jan 6, 2027.'],
+h:['قدّم عبر الموقع الرسمي وأكمل قسم المساعدة المالية.','Apply on the official site and complete the financial-aid section.'],
+x:['موعد التقديم العام للبرنامج لم أتحقق منه؛ الموعد المعروض خاص بالمساعدة المالية.','The general application deadline was not checked; the date shown is for financial aid.']},
+{t:'scholarship',f:'general',s:'high_school',src:'UWC Somalia',fund:'partial',dt:'',dk:['يُعلن محلياً (دورة 2027)','Announced locally (2027 cycle)'],link:'https://so.uwc.org/',v:'2026-10-12',ti:['منح UWC للطلاب من الصومال','UWC Scholarships for Students from Somalia'],ds:['التقديم عبر لجنة UWC الوطنية قد يوفر دعماً مالياً حسب الحاجة. شروط العمر والتعليم تختلف حسب الدورة.','Applying through the UWC national committee can provide need-based support. Age and education requirements vary by cycle.'],e:['طلاب المدارس الثانوية في الصومال. الطلب: نموذج، مقالات قصيرة، وتوصيات من معلمين على ورق المدرسة الرسمي.','Secondary students in Somalia. Application: a form, short essays and teacher references on school letterhead.'],b:['مقعد في إحدى 18 كلية UWC حول العالم، بتمويل كامل أو جزئي حسب الحاجة المالية (يُطلب إثبات الدخل من الجميع).','A place at one of 18 UWC colleges worldwide, fully or partially funded by financial need (all applicants submit financial information).'],h:['تعبئة النموذج وإرساله بالبريد الإلكتروني للجنة، ثم اختبارات ومقابلة، ثم ترشيح الأفضل لمقاعد UWC.','Complete the form and email it to the committee, then tests and interviews, then nomination for UWC placements.'],x:['آخر دورة معلنة (دخول 2026): فتحت 10 نوفمبر 2025 وأغلقت 11 يناير 2026. دورة 2027 لم تُعلن بعد.','Latest announced cycle (2026 entry): opened Nov 10, 2025 and closed Jan 11, 2026. The 2027 cycle is not announced yet.']},
+{t:'scholarship',f:'general',s:'high_school',src:'TINFO Foundation',fund:'partial',dt:'2027-01-31',dk:['5–31 يناير 2027','Jan 5–31, 2027'],link:'https://www.tinfo-foundation.org/scholars.dc',n:1,ti:['TINFO Scholars — منح لتلاميذ أفريقيا','TINFO Scholars — Scholarships for African Pupils'],ds:['منح ومساعدات تعليمية لتلاميذ أفريقيا، قد تشمل الرسوم والكتب والمواد. يلزم التحقق من المدرسة وتقديم مستندات دراسية.','Scholarships and grants for pupils in Africa, possibly covering fees, books and materials. School verification and academic documents are required.']},
+{t:'competition',f:'business',s:'high_school',src:'Blue Ocean Competition',fund:'prize',dt:'2027-02-21',op:'now',od:['التسجيل مفتوح','Registration open'],dk:['21 فبراير 2027','Feb 21, 2027'],link:'https://blueoceancompetition.org/',v:'2026-10-12',ti:['مسابقة Blue Ocean لريادة الأعمال','Blue Ocean Student Entrepreneur Competition'],ds:['مسابقة افتراضية مجانية لطلاب الثانوية حول العالم، فردياً أو في فريق، بجوائز مالية.','A free virtual entrepreneurship competition for high-school students worldwide, solo or in teams, with cash prizes.'],
+e:['طلاب الثانوية بعمر 14–18 من أي دولة، فردياً أو في فريق حتى 5 أعضاء. لا خبرة تجارية مطلوبة.','High-school students aged 14–18 from any country, solo or teams of up to 5. No business experience needed.'],
+b:['مجانية. جوائز: 1000 و750 و500 دولار للمراكز الثلاثة، و750 دولاراً لجائزة اختيار الجمهور، وشهادات للمشاركين.','Free. Prizes: $1,000, $750 and $500 for the top three, $750 People\'s Choice, and certificates.'],
+h:['سجّل، ثم أكمل دورة Blue Ocean القصيرة (إلزامية)، وارفع فيديو عرض من 5 دقائق قبل منتصف ليل 21 فبراير 2027. إعلان الفائزين 13 مايو 2027.','Register, complete the mandatory Blue Ocean mini-course, and submit a 5-minute pitch video by midnight Feb 21, 2027. Winners announced May 13, 2027.']},
+{t:'competition',f:'business',s:'high_school',src:'Diamond Challenge (Univ. of Delaware)',fund:'prize',dt:'2027-01-14',op:'2026-09-16',od:['16 سبتمبر 2026','Sep 16, 2026'],dk:['14 يناير 2027 (5 مساءً بتوقيت شرق أمريكا)','Jan 14, 2027 (5 pm ET)'],link:'https://diamondchallenge.org/competition/',v:'2026-10-12',ti:['Diamond Challenge لريادة الأعمال','Diamond Challenge'],ds:['مسابقة عالمية مجانية من جامعة ديلاوير لفرق طلاب الثانوية لتطوير مشاريع تجارية أو اجتماعية.','A free global competition from the University of Delaware for high-school teams developing business or social ventures.'],
+e:['طلاب الثانوية بعمر 14–18 من أي دولة، في فرق من 2 إلى 4 (يجوز من مدارس مختلفة)، مع مشرف بالغ. مساران: ابتكار تجاري أو ابتكار اجتماعي.','High-school students aged 14–18 worldwide, in teams of 2–4 (may be from different schools), with an adult advisor. Two tracks: Business or Social Innovation.'],
+b:['مجانية. صندوق جوائز يزيد على 100,000 دولار؛ للمراكز الأولى في كل مسار 12,000 و8,000 و4,500 دولار.','Free. A prize pool above $100,000; top three per track win $12,000, $8,000 and $4,500.'],
+h:['سجّل الفريق والمشرف على diamondchallenge.org، ثم قدّم ملخص الفكرة وفيديو العرض قبل 14 يناير 2027. الفائزون يتأهلون لقمة 29–30 أبريل 2027.','Register your team and advisor at diamondchallenge.org, then submit your concept narrative and pitch video by Jan 14, 2027. Finalists attend the Summit Apr 29–30, 2027.']},
+{t:'competition',f:'tech',s:'high_school',src:'Intellectaa iChallenge',fund:'fee',dt:'2026-11-30',dk:['30 نوفمبر 2026','Nov 30, 2026'],link:'https://ichallenge.intellectaa.com/',n:1,ti:['Intellectaa iChallenge — تحدي الابتكار','Intellectaa iChallenge'],ds:['تحدٍ عالمي للصفوف 8–12: تجربة أو جهاز أو برنامج يُقدَّم للمراجعة. توجد رسوم حسب تصنيف دخل الدولة.','A global challenge for Grades 8–12: an experiment, device or program submitted for review. Fees depend on country income level.']},
+{t:'competition',f:'arts',s:'high_school',src:'Immerse Education',fund:'partial',dt:'2026-10-25',op:'2026-08-03',od:['3 أغسطس 2026','Aug 3, 2026'],dk:['25 أكتوبر 2026','Oct 25, 2026'],link:'https://www.immerse.education/essay-competition',v:'2026-10-12',ti:['مسابقة Immerse Education للمقال 2027','Immerse Education Essay Competition 2027'],ds:['مسابقة مقال مجانية لعمر 13–18 حول العالم، قد يفوز المشاركون بمنح كاملة أو جزئية لبرامج Immerse.','A free global essay competition for ages 13–18; winners can earn full or partial scholarships to Immerse programmes.'],
+e:['عمر 13–18 عند بدء البرنامج الذي تصلح له المنحة، من أي دولة. مقال أكاديمي من 500 كلمة عن سؤال تختاره من أكثر من 20 سؤالاً.','Ages 13–18 when the scholarship programme starts, any country. A 500-word academic essay on one of 20+ questions.'],
+b:['المشاركة مجانية. حتى 10 منح كاملة، إضافة إلى منح جزئية 50–75% لأي برنامج من Immerse.','Free to enter. Up to 10 full scholarships plus 50–75% partial scholarships for any Immerse programme.'],
+h:['سجّل اهتمامك لتصلك قائمة الأسئلة، ثم ارفع المقال عبر نموذج المشاركة قبل 25 أكتوبر 2026. آخر موعد لاستلام المنحة 25 نوفمبر 2026.','Register interest to get the question guide, then upload your essay via the entry form by Oct 25, 2026. Scholarship redemption deadline: Nov 25, 2026.']},
+{t:'competition',f:'general',s:'high_school',src:'TED Summer School (Immerse)',fund:'partial',dt:'2027-01-16',op:'2026-11-02',od:['2 نوفمبر 2026','Nov 2, 2026'],dk:['16 يناير 2027','Jan 16, 2027'],link:'https://www.ted.immerse.education/public-speaking-challenge',v:'2026-10-12',ti:['تحدي TED Summer School للتحدث','TED Summer School Public Speaking Challenge'],ds:['تحدٍ مجاني لعمر 13–18: تقديم خطاب مسجَّل، مع فرصة لمنحة جزئية (حتى 75%) في برنامج Immerse.','A free challenge for ages 13–18: submit a recorded talk for a chance at a partial scholarship (up to 75%) toward an Immerse programme.'],x:['صحّحت الموعد إلى 16 يناير 2027 (كان 10 يناير) من صفحة Immerse الرسمية. شروط الأهلية وطول الفيديو لم أؤكدهما بعد.','Deadline corrected to Jan 16, 2027 (was Jan 10) per the official Immerse page. Eligibility details and video length not yet confirmed.']},
+{t:'competition',f:'science',s:'high_school',src:'Shiing-Shen Competition',fund:'partial',dt:'2026-11-08',dk:['1–8 نوفمبر 2026','Nov 1–8, 2026'],link:'https://theshiing-shencompetition.org/',n:1,ti:['Shiing-Shen — المسابقة الأكاديمية الأفريقية','Shiing-Shen Competition'],ds:['مسابقة أكاديمية أفريقية لعمر 13–19 في الرياضيات والفيزياء والكيمياء والأحياء والأدب الإنجليزي، مع رسوم تقديم أولية.','A pan-African academic competition for ages 13–19 in maths, physics, chemistry, biology and English literature; an initial fee applies.']}
+];
+const L={ar:{nHome:'الرئيسية',nSch:'منح',nPro:'برامج',nCom:'مسابقات',h1:'كل الفرص التعليمية في مكان واحد',sub:'منح وبرامج ومسابقات مرتبطة بمصادرها الرسمية، ومرتبة حسب أقرب موعد.',go:'بحث',ph:'ابحث عن منحة أو برنامج أو مسابقة',title:'الفرص التعليمية',reset:'مسح الفلاتر',empty:'لم نجد نتائج مطابقة. جرّب كلمات أخرى.',ftag:'نجمع الفرص من مصادرها الرسمية ونشرحها ببساطة.',contact:'تواصل معنا',fnote:'Swan قيد التطوير. تأكد دائماً من الموعد والشروط في الموقع الرسمي قبل التقديم.',all:'الكل',types:{scholarship:'منح',program:'برامج',competition:'مسابقات'},stageAll:'كل المراحل',fundAll:'كل أنواع التمويل',fieldAll:'كل المجالات',dueAll:'أي موعد',due:{m:'خلال شهر',q:'خلال 3 أشهر',l:'بعد ذلك'},stage:{high_school:'ثانوية',undergraduate:'بكالوريوس'},fund:{full:'تمويل كامل',partial:'تمويل جزئي',free:'مجاني',prize:'جوائز',fee:'برسوم'},field:{general:'عام',business:'أعمال',tech:'تقنية',arts:'فنون',science:'علوم'},res:'فرصة',aLogin:'دخول',aMe:'حسابي',aT:'الحساب',aOff:'الحساب جاهز في الكود لكنه غير مفعّل. أنشئ مشروع Firebase وضع إعداداته في FIREBASE_CONFIG داخل الملف.',aVer:'تأكيد البريد',aSent:'أرسلنا رابط التأكيد إلى بريدك. افتح الرابط ثم اضغط «تحققت».',aChk:'تحققت',aRe:'إعادة إرسال الرابط',aOut:'تسجيل الخروج',aOk:'تم تأكيد بريدك',aIn:'تسجيل الدخول',aUp:'إنشاء حساب',aName:'الاسم',aMail:'البريد الإلكتروني',aPw:'كلمة المرور (8 أحرف على الأقل)',aFg:'نسيت كلمة المرور؟',aSw1:'ليس لديك حساب؟ أنشئ حساباً',aSw2:'لديك حساب؟ سجّل الدخول',aRs:'إرسال رابط الاستعادة',aRsd:'أرسلنا رابط الاستعادة إلى بريدك.',aBn:'بريدك غير مؤكد بعد.',aNeed:'سجّل الدخول وأكّد بريدك لحفظ الفرص.',aNo:'لم يُؤكَّد بعد. تحقق من بريدك (وملف الرد غير المرغوب).',aRsn:'أُرسل الرابط مجدداً.',saved:'المحفوظة',home:'الرئيسية',filt:'تصفية',save:'حفظ الفرصة',aBad:'تحقق من البريد وكلمة المرور (8 أحرف على الأقل).',er:{'auth/email-already-in-use':'هذا البريد مسجّل مسبقاً.','auth/invalid-credential':'البريد أو كلمة المرور غير صحيحة.','auth/wrong-password':'البريد أو كلمة المرور غير صحيحة.','auth/user-not-found':'البريد أو كلمة المرور غير صحيحة.','auth/weak-password':'كلمة المرور ضعيفة.','auth/invalid-email':'البريد غير صالح.','auth/too-many-requests':'محاولات كثيرة. انتظر قليلاً ثم أعد المحاولة.','auth/network-request-failed':'تعذّر الاتصال. تحقق من الإنترنت.'},opens:'يفتح بعد {n} يوماً',open:'مفتوح الآن',opUnk:'موعد الفتح غير معلن',opn:'الفتح',det:'التفاصيل',dl:'الموعد',left:'باقي {n} يوماً',ver:'تم التحقق: {d}',nver:'لم يُراجع مؤخراً',elig:'من يحق له التقديم',ben:'ماذا تقدم',how:'طريقة التقديم',apply:'الصفحة الرسمية',note:'تنبيه: لم أراجع تفاصيل هذه الفرصة من مصدرها بعد. تأكد من الموقع الرسمي.',gen:'التفاصيل الكاملة في الصفحة الرسمية.'},
+en:{nHome:'Home',nSch:'Scholarships',nPro:'Programs',nCom:'Competitions',h1:'Every educational opportunity in one place',sub:'Scholarships, programs and competitions linked to their official sources, sorted by nearest deadline.',go:'Search',ph:'Search a scholarship, program or competition',title:'Opportunities',reset:'Clear filters',empty:'No matching results. Try other keywords.',ftag:'We gather opportunities from official sources and explain them simply.',contact:'Contact us',fnote:'Swan is under development. Always confirm deadlines and requirements on the official site before applying.',all:'All',types:{scholarship:'Scholarships',program:'Programs',competition:'Competitions'},stageAll:'All stages',fundAll:'All funding',fieldAll:'All fields',dueAll:'Any deadline',due:{m:'Within a month',q:'Within 3 months',l:'Later'},stage:{high_school:'High school',undergraduate:'Undergraduate'},fund:{full:'Full funding',partial:'Partial funding',free:'Free',prize:'Prizes',fee:'Entry fee'},field:{general:'General',business:'Business',tech:'Technology',arts:'Arts',science:'Science'},res:'opportunities',aLogin:'Sign in',aMe:'My account',aT:'Account',aOff:'Accounts are built in but not enabled. Create a Firebase project and put its settings in FIREBASE_CONFIG in this file.',aVer:'Verify your email',aSent:'We sent a verification link to your email. Open it, then tap I verified.',aChk:'I verified',aRe:'Resend link',aOut:'Sign out',aOk:'Your email is verified',aIn:'Sign in',aUp:'Create account',aName:'Name',aMail:'Email',aPw:'Password (min. 8 characters)',aFg:'Forgot password?',aSw1:'No account? Create one',aSw2:'Have an account? Sign in',aRs:'Send reset link',aRsd:'We sent a reset link to your email.',aBn:'Your email is not verified yet.',aNeed:'Sign in and verify your email to save opportunities.',aNo:'Not verified yet. Check your inbox (and spam).',aRsn:'Link sent again.',saved:'Saved',home:'Home',filt:'Filters',save:'Save opportunity',aBad:'Check your email and password (min. 8 characters).',er:{'auth/email-already-in-use':'This email is already registered.','auth/invalid-credential':'Wrong email or password.','auth/wrong-password':'Wrong email or password.','auth/user-not-found':'Wrong email or password.','auth/weak-password':'Password is too weak.','auth/invalid-email':'Invalid email.','auth/too-many-requests':'Too many attempts. Please wait and retry.','auth/network-request-failed':'Connection failed. Check your internet.'},opens:'Opens in {n} days',open:'Open now',opUnk:'Opening date not announced',opn:'Opens',det:'Details',dl:'Deadline',left:'{n} days left',ver:'Verified: {d}',nver:'Not recently reviewed',elig:'Who can apply',ben:'What it offers',how:'How to apply',apply:'Official page',note:'Note: I have not yet re-checked this opportunity against its source. Confirm on the official site.',gen:'Full details are on the official page.'}};
+let lang=(()=>{try{return localStorage.getItem('swanLang')==='en'?'en':'ar'}catch(e){return'ar'}})();
+const F={saved:false,type:'all',stage:'all',fund:'all',field:'all',due:'all',q:''};
+const $=id=>document.getElementById(id),i=()=>lang==='en'?1:0,T=k=>L[lang][k];
+const days=d=>d.dt?Math.ceil((new Date(d.dt)-TODAY)/864e5):null;
+const norm=s=>String(s).toLowerCase().normalize('NFKC').replace(/[\u064B-\u0652\u0640]/g,'').replace(/[إأآ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه');
+const opt=(all,map)=>`<option value="all">${all}</option>`+Object.entries(map).map(([k,v])=>`<option value="${k}">${v}</option>`).join('');
+const used=k=>[...new Set(D.map(d=>d[k]))];
+const pick=(o,ks)=>Object.fromEntries(ks.map(k=>[k,o[k]]));
+function ui(){
+  document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';
+  document.title=lang==='ar'?'Swan — منصة الفرص التعليمية':'Swan — Educational Opportunities';
+  document.querySelectorAll('[data-t]').forEach(e=>e.textContent=T(e.dataset.t));
+  $('q').placeholder=T('ph');
+  $('bAr').setAttribute('aria-pressed',lang==='ar');$('bEn').setAttribute('aria-pressed',lang==='en');
+  const ty=['all',...Object.keys(L.ar.types)];
+  $('types').innerHTML=ty.map(k=>`<button type="button" data-v="${k}" aria-pressed="${F.type===k}">${k==='all'?T('all'):T('types')[k]}</button>`).join('');
+  const dm={m:T('due').m,q:T('due').q,l:T('due').l};
+  $('fStage').innerHTML=opt(T('stageAll'),pick(T('stage'),used('s')));
+  $('fFund').innerHTML=opt(T('fundAll'),pick(T('fund'),used('fund')));
+  $('fField').innerHTML=opt(T('fieldAll'),pick(T('field'),used('f')));
+  $('fDue').innerHTML=opt(T('dueAll'),dm);
+  $('fStage').value=F.stage;$('fFund').value=F.fund;$('fField').value=F.field;$('fDue').value=F.due;
+  ['fStage','fFund','fField','fDue'].forEach(id=>$(id).setAttribute('aria-label',$(id).options[0].text));
+  render();authUI();
+}
+function match(d){
+  const n=days(d);
+  const dueOk=F.due==='all'||(n!==null&&(F.due==='m'?n<=31:F.due==='q'?n<=92:n>92));
+  const hay=norm([d.ti[0],d.ti[1],d.ds[0],d.ds[1],d.src,T('types')[d.t],T('field')[d.f],T('fund')[d.fund]].join(' '));
+  const words=norm(F.q).split(/\s+/).filter(Boolean);
+  return (!F.saved||getSaved().includes(d.ti[1]))&&(F.type==='all'||d.t===F.type)&&(F.stage==='all'||d.s===F.stage)&&(F.fund==='all'||d.fund===F.fund)&&(F.field==='all'||d.f===F.field)&&dueOk&&words.every(w=>hay.includes(w));
+}
+function render(){
+  const list=D.map((d,k)=>({d,k})).filter(o=>match(o.d)).sort((a,b)=>(days(a.d)??9e9)-(days(b.d)??9e9));
+  $('count').textContent=`${list.length} ${T('res')}`+(F.q?' · «'+F.q+'»':'');$('bbS').setAttribute('aria-pressed',F.saved);
+  $('empty').style.display=list.length?'none':'block';
+  $('grid').innerHTML=list.map(({d,k})=>{const n=days(d);
+    return `<article class="card"><div class="top"><span class="badge ${d.t}">${T('types')[d.t]}</span><span class="src">${d.src}</span><button class="save" type="button" data-s="${k}" aria-pressed="${isSaved(d)}" aria-label="${T('save')}">${isSaved(d)?'★':'☆'}</button></div>
+    <h3>${d.ti[i()]}</h3><p class="desc">${d.ds[i()]}</p>
+    <div class="tags"><span class="tag">${T('stage')[d.s]}</span><span class="tag">${T('fund')[d.fund]}</span><span class="tag">${T('field')[d.f]}</span></div>
+    <div class="ver ${d.v?'':'no'}">${d.v?'✓ '+T('ver').replace('{d}',d.v):T('nver')}</div>
+    ${opn(d)}<div class="foot"><span>${T('dl')}: <b>${d.dk[i()]}</b>${n!==null&&n>=0?` <span class="due">${T('left').replace('{n}',n)}</span>`:''}</span><button class="cta" type="button" data-k="${k}">${T('det')}</button></div></article>`}).join('');
+}
+function opn(d){if(!d.op)return `<div class="ver no">${T('opUnk')}</div>`;const o=d.op==='now'?0:Math.ceil((new Date(d.op)-TODAY)/864e5);return o>0?`<div class="ver" style="color:var(--acc)">◔ ${T('opens').replace('{n}',o)}</div>`:`<div class="ver">● ${T('open')}</div>`}
+function section(h,txt){return txt?`<h4>${h}</h4><p>${txt[i()]}</p>`:''}
+function openM(k){
+  const d=D[k];
+  $('mB').className='badge '+d.t;$('mB').textContent=T('types')[d.t];$('mS').textContent=d.src;
+  $('mT').textContent=d.ti[i()];$('mD').textContent=d.ds[i()];
+  $('mDet').innerHTML=d.e?section(T('elig'),d.e)+section(T('ben'),d.b)+section(T('how'),d.h):`<h4>${T('how')}</h4><p>${T('gen')}</p>`;
+  $('mTags').innerHTML=`<span class="tag">${T('stage')[d.s]}</span><span class="tag">${T('fund')[d.fund]}</span><span class="tag">${T('field')[d.f]}</span>`;
+  const nt=$('mNote');const msg=d.x?d.x[i()]:(d.n?T('note'):'');nt.textContent=msg;nt.style.display=msg?'block':'none';
+  $('mDue').innerHTML=`${T('opn')}: <b>${d.od?d.od[i()]:T('opUnk')}</b><br>${T('dl')}: <b>${d.dk[i()]}</b>`;
+  $('mA').textContent=T('apply');$('mA').href=d.link;
+  $('ov').classList.add('open');document.body.style.overflow='hidden';$('mx').focus();window._last=document.activeElement;
+}
+function closeM(){$('ov').classList.remove('open');document.body.style.overflow='';}
+$('bAr').onclick=()=>setL('ar');$('bEn').onclick=()=>setL('en');
+function setL(l){lang=l;try{localStorage.setItem('swanLang',l)}catch(e){}ui()}
+$('types').onclick=e=>{const b=e.target.closest('button');if(b){F.type=b.dataset.v;ui()}};
+document.querySelectorAll('nav .links a').forEach(a=>a.onclick=()=>{F.type=a.dataset.type;ui()});
+[['fStage','stage'],['fFund','fund'],['fField','field'],['fDue','due']].forEach(([id,k])=>$(id).onchange=e=>{F[k]=e.target.value;render()});
+$('q').oninput=e=>{F.q=e.target.value;render()};
+function runSearch(){F.q=$('q').value.trim();render();$('q').blur();$('opps').scrollIntoView({behavior:'smooth'})}
+$('go').onclick=runSearch;
+$('q').onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();runSearch()}};
+$('reset').onclick=()=>{Object.assign(F,{saved:false,type:'all',stage:'all',fund:'all',field:'all',due:'all',q:''});$('q').value='';ui()};
+$('grid').onclick=e=>{const b=e.target.closest('.cta'),v=e.target.closest('.save');if(b)openM(+b.dataset.k);if(v)toggleSave(+v.dataset.s)};
+$('mx').onclick=()=>{closeM();window._last&&window._last.focus&&window._last.focus()};
+$('ov').onclick=e=>{if(e.target.id==='ov')closeM()};
+document.onkeydown=e=>{if(e.key==='Escape'){closeM();closeA()}};
+/* ===== mobile helpers ===== */
+$('fbtn').onclick=()=>{const o=$('adv').classList.toggle('open');$('fbtn').setAttribute('aria-expanded',o)};
+$('bbH').onclick=()=>{F.saved=false;render();window.scrollTo({top:0,behavior:'smooth'})};
+$('bbS').onclick=()=>{if(!canSave()){openA();return}F.saved=!F.saved;render();$('opps').scrollIntoView({behavior:'smooth'})};
+$('bbA').onclick=()=>openA();$('acct').onclick=()=>openA();
+/* ===== accounts (Firebase Auth) ===== */
+const FIREBASE_CONFIG={apiKey:'AIzaSyA2CWTG-WvHRMw_xueml_wF72JOjFuEqY4',authDomain:'swan-190db.firebaseapp.com',projectId:'swan-190db',appId:'1:1092430853041:web:f75ecbcc8ed36364728390'}; // ضع إعدادات مشروعك هنا
+let A=null,user=null,amode='in';
+const esc=x=>String(x).replace(/[&<>"']/g,c=>'&#'+c.charCodeAt(0)+';');
+const canSave=()=>!!(user&&user.emailVerified);
+const sk=()=>'swanSaved:'+user.uid;
+function getSaved(){if(!canSave())return[];try{return JSON.parse(localStorage.getItem(sk()))||[]}catch(e){return[]}}
+const isSaved=d=>getSaved().includes(d.ti[1]);
+function toggleSave(k){if(!canSave()){openA();return}const id=D[k].ti[1];let a=getSaved();a=a.includes(id)?a.filter(x=>x!==id):[...a,id];try{localStorage.setItem(sk(),JSON.stringify(a))}catch(e){}render()}
+async function initAuth(){
+  if(!FIREBASE_CONFIG.apiKey){authUI();return}
+  try{const u='https://www.gstatic.com/firebasejs/10.12.2/';
+    const [app,au]=await Promise.all([import(u+'firebase-app.js'),import(u+'firebase-auth.js')]);
+    A={...au,auth:au.getAuth(app.initializeApp(FIREBASE_CONFIG))};
+    A.onAuthStateChanged(A.auth,x=>{user=x;if(!canSave())F.saved=false;authUI();render()});
+  }catch(e){A=null;authUI()}
+}
+function authUI(){
+  const a=$('acct');a.textContent=user?T('aMe'):T('aLogin');a.classList.toggle('on',!!user);
+  const bn=$('bn'),need=user&&!user.emailVerified;bn.style.display=need?'block':'none';
+  if(need){bn.innerHTML=T('aBn')+' <button type="button" id="bnb">'+T('aVer')+'</button>';$('bnb').onclick=()=>openA()}
+  if($('aov').classList.contains('open'))authView();
+}
+function openA(){authView();$('aov').classList.add('open');document.body.style.overflow='hidden';const f=$('aB').querySelector('input,button');f&&f.focus()}
+function closeA(){$('aov').classList.remove('open');document.body.style.overflow=''}
+$('ax').onclick=closeA;$('aov').onclick=e=>{if(e.target.id==='aov')closeA()};
+const say=(t,ok)=>{const m=$('aM');if(m){m.textContent=t;m.className='msg '+(ok?'ok':'err')}};
+const fail=e=>say((T('er')[e&&e.code])||T('aBad'));
+function authView(){
+  const b=$('aB');
+  if(!A){$('aT').textContent=T('aT');b.innerHTML='<p>'+T('aOff')+'</p>';return}
+  A.auth.languageCode=lang;
+  if(user){
+    $('aT').textContent=user.emailVerified?T('aMe'):T('aVer');
+    b.innerHTML='<p><b>'+esc(user.displayName||'')+'</b><br><span dir="ltr">'+esc(user.email)+'</span></p>'+
+      (user.emailVerified?'<p style="color:var(--ok)">✓ '+T('aOk')+'</p>':'<p>'+T('aSent')+'</p><button class="btn full" id="aChk" type="button">'+T('aChk')+'</button><button class="link" id="aRe" type="button">'+T('aRe')+'</button>')+
+      '<p><button class="link" id="aOut" type="button">'+T('aOut')+'</button></p><div class="msg" id="aM" aria-live="polite"></div>';
+    if($('aChk'))$('aChk').onclick=async()=>{try{await user.reload();user=A.auth.currentUser;authUI();render();user.emailVerified?authView():say(T('aNo'))}catch(e){fail(e)}};
+    if($('aRe'))$('aRe').onclick=async()=>{try{await A.sendEmailVerification(user);say(T('aRsn'),1)}catch(e){fail(e)}};
+    $('aOut').onclick=async()=>{await A.signOut(A.auth);closeA()};
+    return}
+  const up=amode==='up',rs=amode==='reset';
+  $('aT').textContent=rs?T('aRs'):up?T('aUp'):T('aIn');
+  b.innerHTML='<form id="aF" novalidate>'+(up?'<label class="fld" for="aN">'+T('aName')+'</label><input class="fi" id="aN" autocomplete="name">':'')+
+    '<label class="fld" for="aE">'+T('aMail')+'</label><input class="fi" id="aE" type="email" inputmode="email" autocomplete="email" dir="ltr">'+
+    (rs?'':'<label class="fld" for="aP">'+T('aPw').split(' (')[0]+'</label><input class="fi" id="aP" type="password" autocomplete="'+(up?'new':'current')+'-password" dir="ltr" placeholder="'+(up?T('aPw'):'')+'">')+
+    '<button class="btn full" type="submit">'+(rs?T('aRs'):up?T('aUp'):T('aIn'))+'</button><div class="msg" id="aM" aria-live="polite"></div></form>'+
+    '<p>'+(rs?'':'<button class="link" id="aFg" type="button">'+T('aFg')+'</button><br>')+'<button class="link" id="aSw" type="button">'+(up||rs?T('aSw2'):T('aSw1'))+'</button></p>';
+  if($('aFg'))$('aFg').onclick=()=>{amode='reset';authView()};
+  $('aSw').onclick=()=>{amode=up||rs?'in':'up';authView()};
+  $('aF').onsubmit=async e=>{e.preventDefault();
+    const em=$('aE').value.trim(),pw=$('aP')?$('aP').value:'',nm=$('aN')?$('aN').value.trim():'';
+    if(!/^\S+@\S+\.\S+$/.test(em)||(!rs&&(up?pw.length<8:!pw)))return say(T('aBad'));
+    try{
+      if(rs){await A.sendPasswordResetEmail(A.auth,em);say(T('aRsd'),1)}
+      else if(up){const c=await A.createUserWithEmailAndPassword(A.auth,em,pw);if(nm)await A.updateProfile(c.user,{displayName:nm});await A.sendEmailVerification(c.user);user=c.user;authUI();authView()}
+      else{await A.signInWithEmailAndPassword(A.auth,em,pw)}
+    }catch(x){fail(x)}};
+}
+ui();initAuth();
+</script>
+</body>
+</html>
